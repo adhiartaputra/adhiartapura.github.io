@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Student List</title>
+  </head>
+  <body>
+    <% include ./partials/header %>
+    <h2>Student Lists</h2>
+      <a href="/student/add">Add Student</a><br>
+    <table border= 1px>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <% students.forEach(student => {%>
+          <td><%= student.id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.gender %></td>
+          <td><%= student.email %></td>
+          <td>
+            <a href="/student/student_edit/<%= student.id %>">edit</a>
+            <a href="/student/delete/<%= student.id %>">delete</a>
+          </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

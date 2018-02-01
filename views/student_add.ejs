@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <% include ./partials/head %>
+  <body>
+    <h1>Add Student</h1>
+          <% include ./partials/error %>
+    <form action="/student/add" method="post">
+      <label for="name">Name : </label>
+      <input type="text" name="name" value="" placeholder=""><br>
+      <label for="gender">Gender : </label>
+      <input type="text" name="gender" value="" placeholder=""><br>
+      <label for="email">Email : </label>
+      <input type="email" name="email" value="" placeholder=""><br>
+      <label for="SportList">Class : </label>
+      <select name="classId">
+        <%Classes.forEach(class => {%>
+          <option value="<%=class.id%>"><%=class.name%>
+          </option>
+        <%})%>
+      </select><br>
+      <input type="submit" name="" value="submit">
+    </form>
+  </body>
+</html>
